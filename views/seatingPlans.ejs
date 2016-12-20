@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+  <title>MY APP</title>
+</head>
+<body>
+<script>
+      $(document).ready(function() {console.log('asdsa')
+	      $("body").append(
+		      $("<input>").attr({
+			   type: "button",
+			   id: "seatingPlanCreate"   
+		      }).val("Create"),
+		      $("<input>").attr({
+			   type: "button",
+			   id: "seatingPlanRead"   
+		      }).val("Read"),
+		      $("<input>").attr({
+			   type: "button",
+			   id: "seatingPlanUpdate"   
+		      }).val("Update"),
+		      $("<input>").attr({
+			   type: "button",
+			   id: "seatingPlanDelete"   
+		      }).val("Delete")
+	      );
+	      
+	      $("#seatingPlanCreate").on("click", function() {
+			$.ajax({
+			  url: "/seatingPlans",
+			  method: "post",
+			  data: {
+				  id: 3,
+				  tables: []
+			  },
+			  dataType: "json",
+			  success: function(data) {
+			    console.log(data)
+			  }
+			});
+	      });
+	      
+	      
+	      
+	      $("#seatingPlanRead").on("click", function() {
+			$.ajax({
+			  url: "/seatingPlans",
+			  method: "get",
+			  success: function(data) {
+			    console.log(data)
+			  }
+			});
+	      });
+	      
+	      
+	      
+	      $("#seatingPlanUpdate").on("click", function() {
+			$.ajax({
+			  url: "/seatingPlans",
+			  method: "put",
+			  data: {
+				  id: 3,
+				  tables: [{id: 22}]
+			  },
+			  dataType: "json",
+			  success: function(data) {
+			    console.log(data)
+			  }
+			});
+	      });
+	      
+	      
+	      
+	      $("#seatingPlanDelete").on("click", function() {
+			$.ajax({
+			  url: "/seatingPlans",
+			  method: "delete",
+			  data: {
+				  id: 3,
+			  },
+			  dataType: "json",
+			  success: function(data) {
+			    console.log(data)
+			  }
+			});
+	      });
+      })
+    </script>
+</body>
+</html>

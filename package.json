@@ -1,18 +1,21 @@
 {
-  "name": "DragAndDrop",
-  "version": "0.0.1",
-  "private": true,
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-native start",
-    "ios-bundle": "react-native bundle --platform ios --dev false --entry-file index.ios.js --bundle-output iOS/main.jsbundle"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "react": "^15.4.1",
-    "react-native": "^0.16.0",
-    "react-native-cli": "^2.0.0",
-    "react-redux": "^4.4.6",
-    "redux": "^3.6.0",
-    "redux-actions": "^1.1.0",
-    "redux-api-middleware": "^1.0.2"
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.15"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
